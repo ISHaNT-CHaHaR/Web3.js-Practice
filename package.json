@@ -1,0 +1,23 @@
+{
+  "name": "web3.js-peractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "web3": "^1.2.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISHaNT-CHaHaR/Web3.js-Peractice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ISHaNT-CHaHaR/Web3.js-Peractice/issues"
+  },
+  "homepage": "https://github.com/ISHaNT-CHaHaR/Web3.js-Peractice#readme"
+}
