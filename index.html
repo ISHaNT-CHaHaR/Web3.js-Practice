@@ -31,7 +31,7 @@
             web3 = new Web3(web3.currentProvider);
          } else {
             web3 = new Web3(
-               new Web3.providers.HttpProvider('http://localhost:7545')
+               new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/998d783144dc4f9e824a3ab0a9982964')
             );
          }
 
@@ -72,13 +72,16 @@
 
          // Get the contract abi
          var myMessage = RemixContract.at(
-            '0xe53bcA34f957344c98440179D6edeF8011170637'
+            '0x59bD565Df1443e018BD5406B43292c69d7A52097'
          );
 
          console.log(myMessage);
 
          $('#setMessageButton').click(function () {
-            myMessage.setMessage($('#userInput').val());
+            message = $('#userInput').val();
+            myMessage.setMessage(message, (error, result) => {
+               message = result;
+            });
             console.log($('#userInput').val());
          });
       </script>
