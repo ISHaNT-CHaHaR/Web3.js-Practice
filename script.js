@@ -16,7 +16,7 @@ web3.eth.getBalance(receivingAddress).then(console.log);
 //////////////////// Set up a transdaction
 
 var rawTransaction = {
-   nonce: 9,
+   nonce: 0,
    to: receivingAddress,
    gasPrice: 20000000,
    gasLimit: 30000,
@@ -34,8 +34,8 @@ var transaction = new EthereumTransaction(rawTransaction);
 transaction.sign(privateKeySenderHex);
 
 ///send the etherium transaction to network
-var serializedTransaction = transaction.serialize();
-web3.eth.sendSignedTransaction(serializedTransaction);
+// var serializedTransaction = transaction.serialize();
+web3.eth.sendSignedTransaction(transaction.serialize());
 
 // web3.eth.getAccounts().then((data) => {
 //    data.forEach((el) => {
