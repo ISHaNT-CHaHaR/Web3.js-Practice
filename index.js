@@ -44,12 +44,16 @@ const init = async () => {
 
    const id = await web3.eth.net.getId();
    const deployedNetwork = MyContract.networks[id];
-   const contract = new Web3.eth.Contract(
+   const contract = new web3.eth.Contract(
       MyContract.abi,
       deployedNetwork.address
    );
    //abi,
    //address optional.
+
+   const result = await contract.methods.getData().call();
+
+   console.log(result);
 };
 
 init();
