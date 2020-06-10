@@ -54,6 +54,20 @@ const init = async () => {
    const result = await contract.methods.getData().call();
 
    console.log(result);
+
+   const addresses = await web3.eth.getAccounts();
+   const receipt = await contract.methods.setData(10).send({
+      from: addresses[0],
+   });
+
+   const data = await contract.methods.getData().call();
+   console.log(data);
+
+   console.log(receipt);
+
+   //  sending rther to smart contract.
+   // 1. EXECUTE a function
+   // 2. SEnd ether directly using fall back.
 };
 
 init();
